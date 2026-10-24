@@ -1,0 +1,7 @@
+# Robots.txt for Clinic Growth Helpers
+# Domain: https://clinicgrowthhelpers.com
+
+User-agent: *
+Allow: /
+
+Sitemap: https://clinicgrowthhelpers.com/sitemap.xml
