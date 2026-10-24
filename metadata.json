@@ -1,0 +1,6 @@
+{
+  "name": "Clinic Growth Helpers",
+  "description": "Indian patient acquisition agency helping modern clinics turn missed calls and unanswered WhatsApp messages into booked patients.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
