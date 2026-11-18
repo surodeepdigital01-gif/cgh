@@ -23,23 +23,20 @@ export const siteConfig = {
     whatsapp: "+91 8293471447",
     whatsappRaw: "918293471447",
     email: "hello@clinicgrowthhelpers.com",
-    office: "Sector V, Kolkata, West Bengal, India",
-    city: "Kolkata",
+    office: "Remote-First Operations — Kolkata, Malda & Siliguri, West Bengal, India",
+    city: "Kolkata, Malda & Siliguri",
     state: "West Bengal",
     country: "India",
   },
 
-  // Color Constants (for reference and inline styles if needed)
+  // Color Constants (3-Colour System: Deep Navy, Warm Cream, Teal Accent)
   colors: {
-    navy: "#0B1F3A",
-    navyDark: "#061224",
-    teal: "#0E9F8E",
-    tealDark: "#0A7F72",
-    tealLight: "#E6F7F5",
-    softWhite: "#F7FAFC",
-    gold: "#C8A24A",
-    goldLight: "#FAF4E6",
-    slate: "#475569",
+    navy: "#0F2A4A",
+    navyDark: "#0A1D33",
+    cream: "#F6F1E9",
+    white: "#FFFFFF",
+    teal: "#14B8A6",
+    tealDark: "#0F8F83",
   },
 
   // Top Trust Marquee Bar Items
@@ -289,13 +286,13 @@ export const siteConfig = {
   // Who We Serve (5 Core Specialties)
   specialties: [
     {
-      name: "IVF & Fertility Clinics",
-      slug: "ivf-fertility",
-      path: "/specialties/ivf-fertility",
+      name: "Dermatology Clinics (skin and hair)",
+      slug: "dermatology",
+      path: "/specialties/dermatology",
       description:
-        "Empathetic, private enquiry handling, consultation booking and follow-up across a long patient journey.",
-      challenge: "High emotional stakes and privacy concerns cause prospective couples to drop out before booking.",
-      solution: "Discreet WhatsApp counseling triage and confidential consultation booking pathways.",
+        "Instant WhatsApp triage for skin and hair enquiries, pre-consultation intake and follow-up for hair restoration and treatment plans.",
+      challenge: "Skin triage mixed with hair restoration inquiries and slow replies during busy laser procedures.",
+      solution: "Instant automated triage separating skin and hair pathways with structured pre-consult intake.",
     },
     {
       name: "Dental Clinics & Chains",
@@ -307,6 +304,15 @@ export const siteConfig = {
       solution: "24/7 chair-side booking, branch-wise routing, and automated 6-month recall sequences.",
     },
     {
+      name: "IVF & Fertility Clinics",
+      slug: "ivf-fertility",
+      path: "/specialties/ivf-fertility",
+      description:
+        "Empathetic, private enquiry handling, consultation booking and follow-up across a long patient journey.",
+      challenge: "High emotional stakes and privacy concerns cause prospective couples to drop out before booking.",
+      solution: "Discreet WhatsApp counseling triage and confidential consultation booking pathways.",
+    },
+    {
       name: "Orthopaedic & Physiotherapy Clinics",
       slug: "orthopaedic-physiotherapy",
       path: "/specialties/orthopaedic-physiotherapy",
@@ -314,15 +320,6 @@ export const siteConfig = {
         "Booking for joint, spine and sports-injury consultations, plus physiotherapy session reminders and care-plan follow-ups.",
       challenge: "Patients dropping out between initial consultation and ongoing physiotherapy sessions.",
       solution: "Urgent acute pain triage, surgeon OPD booking, and automated rehab session reminder loops.",
-    },
-    {
-      name: "Dermatology Clinics (skin and hair)",
-      slug: "dermatology",
-      path: "/specialties/dermatology",
-      description:
-        "Instant WhatsApp triage for skin and hair enquiries, pre-consultation intake and follow-up for hair restoration and treatment plans.",
-      challenge: "Skin triage mixed with hair restoration inquiries and slow replies during busy laser procedures.",
-      solution: "Instant automated triage separating skin and hair pathways with structured pre-consult intake.",
     },
     {
       name: "Eye Care & Ophthalmology Clinics",
@@ -453,6 +450,22 @@ export const COMMITMENT_TERMS = {
   sectionTitle: "Commitment Terms",
   summaryNote: "These terms are summarised for clarity. The signed agreement is the final reference.",
   freeMonths: COMMITMENT_FREE_MONTHS,
+  targetSection: {
+    eyebrow: "OUR 6-MONTH TARGET",
+    headline: "100 New Attended Patients in 6 Months",
+    description:
+      "Attended, billed new patients who first reached your clinic through the website, WhatsApp concierge, AI voice line, or search campaigns we build and run.",
+    illustrativeLabel: "Illustrative Ramp-Up",
+    trajectoryTitle: "0 → 100 Patients (Months 1–6)",
+    milestones: [
+      { label: "Month 1: System Live" },
+      { label: "Month 2–3: 25+ Patients" },
+      { label: "Month 4–5: 65+ Patients" },
+      { label: "Month 6: 100+ Patients" },
+    ],
+    disclaimer:
+      "Illustrative example only. Actual patient volume depends on specialty demand, clinic capacity, and adherence to front-desk commitments.",
+  },
   pillars: [
     {
       pillarNumber: 1,

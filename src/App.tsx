@@ -4,6 +4,7 @@
  */
 
 import React, { useState } from 'react';
+import { MotionConfig } from 'motion/react';
 import { RouterProvider, useRouter } from './router/Router.tsx';
 import { Navbar } from './components/Navbar.tsx';
 import { Footer } from './components/Footer.tsx';
@@ -78,14 +79,14 @@ const MainLayout: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-slate-800 selection:bg-[#E6F7F5] selection:text-[#0A7F72]">
+    <div className="min-h-screen flex flex-col bg-[#F6F1E9] text-[#0F2A4A] selection:bg-[#14B8A6]/20 selection:text-[#0F2A4A] overflow-x-clip">
       {/* 1. Branded Short Preloader */}
       <Preloader onComplete={() => setIsPreloaded(true)} />
 
       {/* 2. Scroll Progress Bar in Medical Teal */}
       <ScrollProgressBar />
 
-      {/* 3. Sticky Navbar with Frosted Glass Scroll Effect */}
+      {/* 3. Sticky Navbar with Solid/95% White Background */}
       <Navbar />
 
       {/* Main Page Content */}
@@ -110,8 +111,10 @@ const MainLayout: React.FC = () => {
 
 export default function App() {
   return (
-    <RouterProvider>
-      <MainLayout />
-    </RouterProvider>
+    <MotionConfig reducedMotion="user">
+      <RouterProvider>
+        <MainLayout />
+      </RouterProvider>
+    </MotionConfig>
   );
 }

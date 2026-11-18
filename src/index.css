@@ -1,21 +1,26 @@
 @import "tailwindcss";
 
+@theme {
+  --color-navy: #0F2A4A;
+  --color-navy-dark: #0A1D33;
+  --color-cream: #F6F1E9;
+  --color-teal: #14B8A6;
+  --color-teal-dark: #0F8F83;
+}
+
 @layer base {
   :root {
     --font-serif: 'DM Serif Display', Georgia, serif;
     --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
 
-    /* Luxury healthcare palette */
-    --color-navy: #0B1F3A;
-    --color-navy-dark: #061224;
-    --color-teal: #0E9F8E;
-    --color-teal-dark: #0A7F72;
-    --color-teal-light: #E6F7F5;
-    --color-gold: #C8A24A;
-    --color-gold-light: #FAF4E6;
-    --color-soft-white: #F7FAFC;
-    --color-slate-body: #475569;
+    /* Strict 3-Colour Palette */
+    --color-navy: #0F2A4A;
+    --color-navy-dark: #0A1D33;
+    --color-cream: #F6F1E9;
+    --color-teal: #14B8A6;
+    --color-teal-dark: #0F8F83;
+    --color-white: #FFFFFF;
   }
 
   html {
@@ -23,17 +28,26 @@
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE/Edge */
+    background-color: #0F2A4A;
+    overflow-x: clip;
   }
 
   body {
     font-family: var(--font-sans);
-    color: #475569;
-    background-color: #FFFFFF;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #0F2A4A;
+    background-color: #F6F1E9;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    overflow-x: clip;
+  }
+
+  section {
+    scroll-margin-top: 96px;
   }
 
   /* Universal scrollbar hide */
@@ -54,12 +68,35 @@
   h1, h2, h3, h4, .font-serif {
     font-family: var(--font-serif);
     letter-spacing: -0.01em;
-    color: #0B1F3A;
+    line-height: 1.18;
+    color: inherit;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    line-height: 1.18;
+    letter-spacing: -0.01em;
   }
 
   .font-mono {
     font-family: var(--font-mono);
   }
+}
+
+/* Consistent small uppercase label system */
+.label-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
 }
 
 /* Glassmorphism helpers */

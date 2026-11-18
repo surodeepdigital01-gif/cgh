@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useRouter } from '../router/Router.tsx';
 import { siteConfig } from '../config/siteConfig.ts';
-import { ArrowRight, PhoneCall, Menu, X, Sparkles } from 'lucide-react';
+import { ArrowRight, Menu, X, Sparkles } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -11,7 +11,7 @@ export const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 30) {
+      if (window.scrollY > 20) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -24,7 +24,7 @@ export const Navbar: React.FC = () => {
 
   const navLinks = [
     { label: 'Services', href: '/services', sectionId: 'services' },
-    { label: 'Specialties', href: '/specialties' },
+    { label: 'Specialties', href: '/specialties', sectionId: 'who-we-serve' },
     { label: 'How It Works', href: '/how-it-works', sectionId: 'how-it-works' },
     { label: 'Pricing', href: '/#pricing', sectionId: 'pricing' },
     { label: 'FAQ', href: '/#faq', sectionId: 'faq' },
@@ -51,154 +51,124 @@ export const Navbar: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-md border-b border-slate-200/90 py-3 sm:py-3.5'
-          : 'bg-[#0B1F3A]/90 backdrop-blur-md border-b border-white/10 py-3.5 sm:py-4'
+      className={`fixed top-0 left-0 right-0 z-40 h-16 lg:h-[72px] transition-shadow duration-200 bg-white/95 backdrop-blur-md border-b border-[#0F2A4A]/10 text-[#0F2A4A] ${
+        isScrolled ? 'shadow-[0_4px_20px_rgba(15,42,74,0.08)]' : ''
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+      <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between gap-4">
         {/* Brand Logo & Wordmark */}
         <button
+          type="button"
           onClick={() => handleNavClick('/')}
-          className="group flex items-center gap-2.5 text-left cursor-pointer focus:outline-none"
+          className="group flex items-center gap-3 text-left cursor-pointer focus:outline-none min-h-[44px]"
         >
-          <div className="relative flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-[#0E9F8E] via-[#0A7F72] to-[#071F36] p-0.5 shadow-md shadow-[#0E9F8E]/25 ring-1 ring-white/20 group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-[#0E9F8E]/40 transition-all duration-300 overflow-hidden shrink-0">
-            {/* Ambient specular highlight glow */}
-            <div className="absolute -top-2 -right-2 w-7 h-7 bg-emerald-300/30 rounded-full blur-xs pointer-events-none" />
-
-            {/* Inner badge container */}
-            <div className="w-full h-full rounded-[10px] bg-gradient-to-b from-white/10 to-transparent flex flex-col items-center justify-center relative px-1">
-              {/* Subtle top growth indicator line with gold pulse node */}
-              <div className="w-full flex items-center justify-between px-1 -mt-0.5 opacity-60">
-                <div className="h-[1.5px] w-3.5 bg-emerald-200/80 rounded-full" />
-                <div className="w-1.5 h-1.5 rounded-full bg-[#C8A24A] shadow-xs" />
+          <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-[#0F2A4A] p-0.5 shadow-sm ring-1 ring-[#0F2A4A]/15 group-hover:ring-[#14B8A6] transition-colors duration-200 overflow-hidden shrink-0">
+            <div className="w-full h-full rounded-[10px] bg-[#0F2A4A] flex flex-col items-center justify-center relative px-1">
+              <div className="w-full flex items-center justify-between px-1 -mt-0.5 opacity-90">
+                <div className="h-[1.5px] w-3.5 bg-[#14B8A6] rounded-full" />
+                <div className="w-1.5 h-1.5 rounded-full bg-[#14B8A6]" />
               </div>
 
-              {/* Bold modern CGH wordmark with custom contrast */}
-              <div className="flex items-center justify-center font-sans font-black tracking-tight leading-none text-white text-[13px] sm:text-sm drop-shadow-xs">
+              <div className="flex items-center justify-center font-sans font-black tracking-[-0.01em] leading-none text-[#F6F1E9] text-[13px] sm:text-sm">
                 <span>CG</span>
-                <span className="text-[#34d399] ml-0.5">H</span>
+                <span className="text-[#14B8A6] ml-0.5">H</span>
               </div>
 
-              {/* Micro badge label */}
-              <span className="text-[6.5px] font-mono font-bold tracking-widest text-emerald-200/90 uppercase leading-none mt-0.5">
+              <span className="text-[6.5px] font-sans font-bold tracking-[0.12em] text-[#14B8A6] uppercase leading-none mt-0.5">
                 GROWTH
               </span>
             </div>
           </div>
           <div>
-            <span
-              className={`text-lg sm:text-xl xl:text-2xl font-serif font-bold tracking-tight block transition-colors ${
-                isScrolled ? 'text-[#0B1F3A]' : 'text-white'
-              }`}
-            >
+            <span className="text-lg sm:text-xl font-serif font-bold tracking-[-0.01em] leading-tight block text-[#0F2A4A]">
               {siteConfig.brand.name}
             </span>
-            <span
-              className={`text-[10px] tracking-wider uppercase font-semibold font-sans block -mt-0.5 transition-colors ${
-                isScrolled ? 'text-[#0E9F8E]' : 'text-emerald-300'
-              }`}
-            >
+            <span className="text-[11px] tracking-[0.06em] uppercase font-semibold font-sans block text-[#0F8F83] leading-tight">
               Doctor Patient Growth
             </span>
           </div>
         </button>
 
-        {/* Desktop Nav Links with Animated Underline */}
-        <nav
-          className={`hidden lg:flex items-center gap-6 xl:gap-7 text-sm font-medium transition-colors ${
-            isScrolled ? 'text-slate-700' : 'text-slate-200'
-          }`}
-        >
+        {/* Desktop Nav Links (1024px+) */}
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-7 text-sm font-medium text-[#0F2A4A]/80 font-sans">
           {navLinks.map((link) => (
             <button
               key={link.label}
+              type="button"
               onClick={() => handleNavClick(link.href, link.sectionId)}
-              className={`relative py-1 group transition-colors cursor-pointer focus:outline-none ${
-                isScrolled ? 'hover:text-[#0E9F8E]' : 'hover:text-white'
-              }`}
+              className="relative py-2 group transition-colors cursor-pointer focus:outline-none hover:text-[#0F2A4A] min-h-[44px] flex items-center"
             >
               <span>{link.label}</span>
-              {/* Animated underline on hover */}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#0E9F8E] rounded-full transition-all duration-300 ease-out group-hover:w-full" />
+              <span className="absolute bottom-2 left-0 w-0 h-0.5 bg-[#14B8A6] rounded-full transition-all duration-200 ease-out group-hover:w-full" />
             </button>
           ))}
         </nav>
 
-        {/* Primary CTA Button: Magnetic feel with Teal Glow Pulse and Sliding Arrow */}
-        <div className="hidden sm:flex items-center gap-3">
-          <motion.button
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.98 }}
+        {/* Desktop Primary CTA Button (1024px+) */}
+        <div className="hidden lg:flex items-center">
+          <button
+            type="button"
             onClick={() => handleNavClick('/contact')}
-            className="group relative inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 bg-[#0E9F8E] hover:bg-[#0A7F72] text-white text-xs sm:text-sm font-semibold rounded-xl shadow-md hover:shadow-teal-600/30 transition-all duration-200 cursor-pointer overflow-hidden"
+            className="group inline-flex items-center gap-2 px-5 py-2.5 min-h-[44px] bg-[#14B8A6] hover:bg-[#0F8F83] text-[#0F2A4A] text-sm font-semibold rounded-xl shadow-sm transition-colors duration-200 cursor-pointer"
           >
-            {/* Subtle light pulse ring */}
-            <span className="absolute -inset-1 rounded-xl bg-[#0E9F8E]/20 animate-pulse pointer-events-none" />
-
-            <Sparkles className="w-4 h-4 text-emerald-200 shrink-0" />
-            <span className="relative z-10 whitespace-nowrap">Book Free Clinic Audit</span>
-            <ArrowRight className="w-4 h-4 relative z-10 transition-transform duration-200 group-hover:translate-x-1 shrink-0" />
-          </motion.button>
+            <Sparkles className="w-4 h-4 text-[#0F2A4A] shrink-0" />
+            <span className="whitespace-nowrap">Book Free Clinic Audit</span>
+            <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 shrink-0 text-[#0F2A4A]" />
+          </button>
         </div>
 
-        {/* Mobile Hamburger Toggle */}
+        {/* Mobile & Tablet Actions (<1024px) */}
         <div className="flex items-center gap-2 lg:hidden">
           <button
+            type="button"
             onClick={() => handleNavClick('/contact')}
-            className="px-3 py-1.5 bg-[#0E9F8E] text-white text-xs font-semibold rounded-lg sm:hidden whitespace-nowrap cursor-pointer shadow-xs"
+            className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 min-h-[40px] bg-[#14B8A6] hover:bg-[#0F8F83] text-[#0F2A4A] text-xs font-semibold rounded-xl shadow-xs transition-colors cursor-pointer whitespace-nowrap"
           >
-            Free Audit
+            <span>Book Free Audit</span>
           </button>
           <button
+            type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`p-2 rounded-lg transition-colors cursor-pointer ${
-              isScrolled ? 'text-slate-700 hover:bg-slate-100' : 'text-white hover:bg-white/10'
-            }`}
+            className="min-w-[44px] min-h-[44px] p-2.5 rounded-xl transition-colors cursor-pointer text-[#0F2A4A] hover:bg-[#0F2A4A]/5 flex items-center justify-center"
             aria-label="Toggle navigation"
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Animated Dropdown Drawer */}
+      {/* Mobile & Tablet Dropdown Drawer (<1024px) */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className={`lg:hidden border-b px-5 pt-3 pb-6 space-y-3 shadow-xl overflow-hidden ${
-              isScrolled
-                ? 'bg-white/95 backdrop-blur-xl border-slate-200 text-slate-800'
-                : 'bg-[#0B1F3A]/98 backdrop-blur-xl border-white/10 text-white'
-            }`}
+            transition={{ duration: 0.2 }}
+            className="lg:hidden border-b px-6 pt-3 pb-6 space-y-3 shadow-xl overflow-hidden bg-white/98 backdrop-blur-xl border-[#0F2A4A]/10 text-[#0F2A4A]"
           >
-            <div className="flex flex-col space-y-2">
+            <div className="flex flex-col space-y-1">
               {navLinks.map((link) => (
                 <button
                   key={link.label}
+                  type="button"
                   onClick={() => handleNavClick(link.href, link.sectionId)}
-                  className={`text-left py-2 px-3 rounded-lg text-sm font-medium transition-colors cursor-pointer ${
-                    isScrolled
-                      ? 'text-slate-800 hover:bg-[#E6F7F5] hover:text-[#0E9F8E]'
-                      : 'text-slate-200 hover:bg-white/10 hover:text-white'
-                  }`}
+                  className="text-left min-h-[44px] py-2.5 px-3 rounded-xl text-base font-medium transition-colors cursor-pointer text-[#0F2A4A]/85 hover:bg-[#F6F1E9] hover:text-[#0F2A4A]"
                 >
                   {link.label}
                 </button>
               ))}
             </div>
 
-            <div className={`pt-2 border-t ${isScrolled ? 'border-slate-100' : 'border-white/10'}`}>
+            <div className="pt-3 border-t border-[#0F2A4A]/10">
               <button
+                type="button"
                 onClick={() => handleNavClick('/contact')}
-                className="w-full py-3 px-4 bg-[#0E9F8E] hover:bg-[#0A7F72] text-white text-sm font-semibold rounded-xl text-center shadow-sm flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full min-h-[48px] py-3 px-4 bg-[#14B8A6] hover:bg-[#0F8F83] text-[#0F2A4A] text-sm font-semibold rounded-xl text-center shadow-sm flex items-center justify-center gap-2 cursor-pointer transition-colors"
               >
                 <span>Book Free Clinic Audit</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 text-[#0F2A4A]" />
               </button>
             </div>
           </motion.div>
@@ -207,3 +177,4 @@ export const Navbar: React.FC = () => {
     </header>
   );
 };
+

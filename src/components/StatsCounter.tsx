@@ -50,25 +50,21 @@ const CountUpNumber: React.FC<{
 
 export const StatsCounter: React.FC = () => {
   return (
-    <section className="py-16 bg-[#0B1F3A] text-white border-y border-slate-800 relative overflow-hidden">
-      {/* Background soft glow */}
-      <div className="absolute top-0 right-1/4 w-80 h-80 bg-[#0E9F8E]/10 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 divide-y lg:divide-y-0 lg:divide-x divide-slate-800">
-          
+    <section className="py-12 md:py-16 bg-[#F6F1E9] text-[#0F2A4A] border-b border-[#0F2A4A]/10 relative overflow-hidden">
+      <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 divide-y lg:divide-y-0 lg:divide-x divide-[#0F2A4A]/10">
           {siteConfig.stats.map((stat, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              transition={{ duration: 0.45, delay: idx * 0.08 }}
               className={`flex flex-col justify-center text-center p-4 ${
                 idx > 1 ? 'pt-6 lg:pt-4' : ''
               }`}
             >
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0E9F8E] tracking-tight mb-2">
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F8F83] tracking-[-0.01em] mb-2">
                 <CountUpNumber
                   target={stat.value}
                   prefix={stat.prefix}
@@ -76,16 +72,15 @@ export const StatsCounter: React.FC = () => {
                 />
               </div>
 
-              <h4 className="text-sm sm:text-base font-serif font-bold text-white mb-1">
+              <h4 className="text-base sm:text-lg font-serif font-bold text-[#0F2A4A] leading-[1.2] tracking-[-0.01em] mb-1.5">
                 {stat.label}
               </h4>
 
-              <p className="text-xs text-slate-400 max-w-[200px] mx-auto leading-normal">
+              <p className="text-xs sm:text-sm text-[#0F2A4A]/75 max-w-[240px] mx-auto leading-[1.6] font-sans">
                 {stat.subtext}
               </p>
             </motion.div>
           ))}
-
         </div>
       </div>
     </section>

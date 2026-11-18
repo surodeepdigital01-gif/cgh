@@ -16,37 +16,37 @@ export const FAQAccordion: React.FC = () => {
         return (
           <div
             key={idx}
-            className={`border rounded-xl transition-all duration-200 overflow-hidden ${
+            className={`rounded-xl transition-all duration-200 overflow-hidden ${
               isOpen
-                ? 'border-emerald-300 bg-emerald-50/20 shadow-xs'
-                : 'border-slate-200 bg-white hover:border-slate-300'
+                ? 'border-2 border-[#14B8A6] bg-white shadow-xs'
+                : 'border border-[#0F2A4A]/10 bg-white hover:border-[#0F2A4A]/20'
             }`}
           >
             <button
               type="button"
               onClick={() => toggle(idx)}
               aria-expanded={isOpen}
-              className="w-full p-5 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500 rounded-xl"
+              className="w-full p-5 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#14B8A6] rounded-xl"
             >
               <div className="flex items-start gap-3">
                 <HelpCircle
                   className={`w-5 h-5 shrink-0 mt-0.5 transition-colors ${
-                    isOpen ? 'text-emerald-600' : 'text-slate-400'
+                    isOpen ? 'text-[#14B8A6]' : 'text-[#0F2A4A]/40'
                   }`}
                 />
-                <span className="font-serif font-semibold text-slate-900 text-base sm:text-lg">
+                <span className="font-serif font-semibold text-[#0F2A4A] text-base sm:text-lg">
                   {faq.q}
                 </span>
               </div>
               <ChevronDown
-                className={`w-5 h-5 text-slate-500 shrink-0 transition-transform duration-200 ${
-                  isOpen ? 'rotate-180 text-emerald-600' : ''
+                className={`w-5 h-5 text-[#0F2A4A]/60 shrink-0 transition-transform duration-200 ${
+                  isOpen ? 'rotate-180 text-[#14B8A6]' : ''
                 }`}
               />
             </button>
 
             {isOpen && (
-              <div className="px-5 pb-5 pt-1 text-slate-600 text-sm leading-relaxed border-t border-slate-100 sm:pl-13 animate-in fade-in duration-150">
+              <div className="px-5 pb-5 pt-1 text-[#0F2A4A]/80 text-sm leading-relaxed border-t border-[#0F2A4A]/10 sm:pl-13 animate-in fade-in duration-150">
                 {faq.a}
               </div>
             )}

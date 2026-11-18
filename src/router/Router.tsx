@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useLayoutEffect } from 'react';
 
 interface RouterContextType {
   currentPath: string;
@@ -21,6 +21,13 @@ export function parseQuery(search: string): Record<string, string> {
   return result;
 }
 
+const scrollToTopInstant = () => {
+  if (typeof window === 'undefined') return;
+  window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+};
+
 export const RouterProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [currentPath, setCurrentPath] = useState<string>(() => {
     if (typeof window !== 'undefined') {
@@ -40,12 +47,21 @@ export const RouterProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     const handlePopState = () => {
       setCurrentPath(window.location.pathname || '/');
       setQuery(parseQuery(window.location.search));
-      window.scrollTo(0, 0);
+      scrollToTopInstant();
     };
 
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
+
+  // Ensure every route transition opens strictly at the top of the new page after DOM updates
+  useLayoutEffect(() => {
+    scrollToTopInstant();
+    const rafId = window.requestAnimationFrame(() => {
+      scrollToTopInstant();
+    });
+    return () => window.cancelAnimationFrame(rafId);
+  }, [currentPath]);
 
   const navigate = (to: string, params?: Record<string, string>) => {
     let url = to;
@@ -58,7 +74,7 @@ export const RouterProvider: React.FC<{ children: React.ReactNode }> = ({ childr
       window.history.pushState({}, '', url);
       setCurrentPath(to);
       setQuery(params || {});
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      scrollToTopInstant();
     }
   };
 

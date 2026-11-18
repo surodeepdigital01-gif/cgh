@@ -143,7 +143,7 @@ export const PLACEHOLDERS_LIST = [
   { key: 'Phone: +91 7863977647 / +91 8293471447', description: 'Configured and active for client calls across India' },
   { key: 'WhatsApp: +91 8293471447', description: 'Configured and active for 24/7 instant chat and booking support' },
   { key: 'Email: hello@clinicgrowthhelpers.com', description: 'Official agency contact email configured across all pages' },
-  { key: 'Office: Sector V, Kolkata, West Bengal', description: 'Registered operational headquarters configured' },
+  { key: 'Operations: Remote — Kolkata, Malda & Siliguri, West Bengal', description: 'Remote-first operational hubs configured' },
   { key: '[Client result coming soon]', description: 'Verified clinic case study and real patient acquisition metrics to be added upon completion of partner engagements' },
   { key: 'Founder: Surodeep Oraon (Configured)', description: 'Founder profile, photo, leadership bio and direct clinic working model configured in siteConfig.ts' },
   { key: 'Team: 5-Member Operations (Configured)', description: 'In-house healthcare web engineering, WhatsApp automation and support team configured' }
