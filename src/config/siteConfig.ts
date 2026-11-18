@@ -439,6 +439,36 @@ export const siteConfig = {
       a: "Because modern clinics are not commodity shops. An independent solo dental practice with two operatories has completely different infrastructure and patient flow requirements than a 3-branch IVF center or an eye hospital performing high volumes of cataract and LASIK surgeries. We customize our system scope during a complimentary 30-minute Clinic Growth Audit based on your patient volume, specialty, and branch count. You receive a clear, fixed 6-month proposal with no hidden tech costs and no per-patient commission.",
       category: "Commitment & Pricing",
     },
+    {
+      q: "We already have a clinic website and Google Business Profile—do we need to rebuild from scratch?",
+      a: "Not necessarily. During our audit, we evaluate your current site's mobile load speed on Indian 4G/5G networks, clinical trust signals, and 1-tap WhatsApp booking flow. If your existing site lacks specialty consultation pathways or slows down patients, we build a fast, mobile-first Authority Website under Pillar 01 and optimize your Google Business Profile for Local Map Pack visibility while keeping your existing domain.",
+      category: "Website, Content & Ads",
+    },
+    {
+      q: "Can our clinic phone number get banned by WhatsApp for automated follow-ups?",
+      a: "No, when configured properly. Unlike risky third-party automation tools that trigger bans, Pillar 02 uses the official Meta WhatsApp Business Cloud API with Meta-approved message templates. Your automated 24/7 replies, pre-procedure prep notes, and Day 1, 3, 7, and 30 patient follow-up sequences run safely through Meta's official infrastructure under your own verified business account.",
+      category: "Technology & AI",
+    },
+    {
+      q: "What happens if multiple patients call at once, or if a caller has a medical emergency?",
+      a: "Unlike a single physical phone line that gives busy tones, our 24/7 AI Voice Receptionist (Pillar 03) answers multiple simultaneous calls in natural English, Hindi, or Bengali. Routine consultation-hour and booking callers immediately receive an SMS/WhatsApp booking link, while urgent clinical situations are prioritized via instant emergency call forwarding directly to the doctor or on-call coordinator, with full call logs and summaries saved in your dashboard.",
+      category: "Technology & AI",
+    },
+    {
+      q: "Do doctors have to write scripts, learn video editing, or do social media trends for Doctor Authority Studio?",
+      a: "Never. Under Pillar 04 (Doctor Authority Studio), our healthcare content team researches common patient myths in your specialty and delivers concise, NMC-compliant monthly script decks written in your authentic clinical voice. You only record short educational explanations on your phone—our editors handle all captions, clean medical B-roll, and publishing.",
+      category: "Website, Content & Ads",
+    },
+    {
+      q: "How do Google Search and Meta Ads work, and how can we track actual patient revenue instead of just clicks?",
+      a: "Under Pillar 05 (Patient Acquisition & Revenue Engine), we manage targeted Google Search and Meta campaigns paired with dedicated treatment landing pages and Lead CRM call/form tracking. Ad budgets are paid transparently by your clinic directly to Google or Meta. Your revenue dashboard maps enquiries, booked slots, attended clinic visits, and cost per patient by source against your clinic billing records.",
+      category: "Website, Content & Ads",
+    },
+    {
+      q: "How does your system reactivate past patients and support multi-branch clinic chains?",
+      a: "Pillar 05 includes automated recall and reputation workflows—sending gentle, value-first reminders for 6-month dental hygiene checkups, dermatology maintenance plans, or physiotherapy sessions, alongside ethical Google review prompts after completed visits. For multi-branch clinics, both the Authority Website and WhatsApp Concierge route enquiries cleanly by preferred branch location.",
+      category: "Front Desk & Operations",
+    },
   ],
   commitmentTerms: undefined as any, // assigned below
   founder: undefined as any, // assigned below

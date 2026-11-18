@@ -66,7 +66,7 @@ export const FAQSection: React.FC = () => {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search questions (e.g., NMC ethics, receptionist, WhatsApp ownership, Hindi, pricing)..."
+              placeholder="Search questions (e.g., website, WhatsApp API, AI calls, reels, Google Ads, NMC)..."
               className="w-full min-h-[44px] pl-10 pr-11 py-3 text-sm sm:text-base bg-white border border-[#0F2A4A]/15 text-[#0F2A4A] rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#14B8A6] focus:border-transparent transition-all placeholder:text-[#0F2A4A]/40 shadow-xs"
             />
             {searchQuery && (
